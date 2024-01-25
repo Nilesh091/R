@@ -1,0 +1,13 @@
+print(letters)
+print(LETTERS)
+print(month.abb)
+print(pi)
+rawVar <- charToRaw("welcome to the world of happiness")
+print(rawVar)
+class(rawVar)
+rawVar <- rawToChar(rawVar)
+print(rawVar)
+class(rawVar)
+c<- "Fun"
+print(paste("welcome to the world of" ,c))
+print(paste0("welcome to the world of" ,c))
