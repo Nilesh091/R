@@ -45,3 +45,6 @@ b[n]
 b[c(1,2,3,3,4)]
 #Range indexing 
 b[1:3]
+
+#out of order indexing
+b[c(2,1,3)]
