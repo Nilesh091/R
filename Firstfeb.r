@@ -48,3 +48,7 @@ b[1:3]
 
 #out of order indexing
 b[c(2,1,3)]
+
+names(b)=c(1:6)
+b
+b[4]
