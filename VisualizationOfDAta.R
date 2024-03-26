@@ -1,0 +1,5 @@
+install.packages("visdat")
+library(visdat)
+d1=data.frame(A=c(1,2,NA,4,5),B=c(NA,2,3,NA,5),C=c(1,2,3,NA,NA))
+sum(is.na(d1))
+vis_miss(d1)

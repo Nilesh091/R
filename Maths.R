@@ -1,0 +1,11 @@
+abs(-4)
+sqrt(4)
+ceiling(4.5)
+floor(4.5)
+trunc(4.12)
+round(3.439,2)
+trunc(4.5)
+cos(pi)
+sin(pi/6)
+log(10)
+
