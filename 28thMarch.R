@@ -1,0 +1,12 @@
+d=read.csv("/Users/nileshranjansahu/Downloads/insurance1.csv")
+View(d)
+library(dplyr)
+str(d)
+d1=is.na(d)
+d1
+d[!d1]
+na.omit(d)
+d
+na.fail(d)
+na.exclude(d)
+na.pass(d)

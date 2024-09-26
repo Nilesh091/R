@@ -12,4 +12,4 @@ d2=read.csv(file.choose())
 #View(d2)
 library(sqldf)
 sqldf("select Year,Industry_aggregation_NZSIOC from d2 where Industry_aggregation_NZSIOC = 'Level 1'" )
-
+ 

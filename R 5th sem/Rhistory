@@ -1,0 +1,39 @@
+sqrt(-1)
+sqrt(-1)
+a=4
+str(a)
+a=mtcars
+a=mtcars
+str(a)
+a$mpg
+library(readxl)
+data <- read_excel("insurance.xls")
+View(data)
+library("readxl")
+my_data <- read_excel("insurance.xls")
+View(my_data)
+getwd
+getwd()
+getwd()
+data <- read.csv("Office city.csv")
+setwd()
+data <- read.csv("Office city.csv")
+print(data)
+View(data)
+data <- read.csv("Office city.csv")
+students = read.csv(file.choose(),header = TRUE)
+a=c(1,2,NA,3,NA,4,5)
+a
+is.na(a)
+is.nan(a)
+summary(a)
+#NaN means "not a number" and it means there is a result,
+#but it cannot be represented in the computer.
+#The second, NA , explains that the data is just missing for unknown reasons.
+#extract elements except NA
+x <- c(100, 200, NA, 300,NA, 400)
+x
+b <- is.na(x)
+b
+c=x[!b]
+c

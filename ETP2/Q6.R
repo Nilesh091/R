@@ -1,0 +1,12 @@
+data=data.frame(
+  x=c(1,2,NA),
+  y=c("a",NA,"b")
+)
+missingvalues=sum(is.na(data))
+missingvalues
+no_missinh_value=data[complete.cases(data),]
+no_missinh_value
+data$x[is.na(data$x)]<-0
+data$y[is.na(data$y)]<-"unknown"
+data$newcol=c(20,39,45)
+data

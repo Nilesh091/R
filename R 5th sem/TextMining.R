@@ -1,0 +1,21 @@
+a=read.csv("~/Downloads/Twitter Dataset.csv")
+str(a)
+gt=a
+View(gt)
+library(NLP)
+library(tm)
+corpus=Corpus(VectorSource(gt))
+inspect(corpus[1:2])
+corpus
+corpus=tm_map(corpus,tolower)
+inspect(corpus)
+corpus = tm_map(corpus, removePunctuation)
+corpus = tm_map(corpus, removeNumbers)
+corpus = tm_map(corpus, removeWords, stopwords("english"))              
+removeURL=function(x)gsub('http.*','',x)
+cleanset=tm_map(corpus,content_transformer(removeURL))#content_transformer is used to apply user defined function
+inspect(cleanset[1:5])
+cleanset=tm_map(corpus,removeWords,c('anyone','walker16'))
+cleanset=tm_map(cleanset,gsub,pattern='stocks',replacement='stock')
+cleanset=tm_map(cleanset,stripWhitespace)
+inspect(cleanset[1:5])

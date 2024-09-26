@@ -1,0 +1,15 @@
+library(ggplot2)
+View(iris)
+ggplot(data=iris)
+#ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width)+ geom_point())
+#View(iris)
+#ggplot(data=iris)
+#ggplot(data=iris,aes(x=Sepal.Length,y=Sepal.Width))
+#plot some area
+p<-ggplot(data=iris,aes(x=Sepal.Length,y=Sepal.Width))
+p+geom_point()
+#facet
+#ggplot(data=iris,aes(x=Sepal.Length,y=Sepal.Width))+geom_point()+facet_wrap(~Species)
+#ggplot(data=iris,aes(x=Sepal.Length,y=Sepal.Width))+geom_point()+facet_wrap(~Species)+geom_smooth(method = "lm")
+ggplot(iris) + geom_point(aes(x=Sepal.Length, y=Petal.Length,color=Species)) 
+View(diamonds)
