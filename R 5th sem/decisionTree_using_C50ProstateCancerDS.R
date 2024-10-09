@@ -44,7 +44,8 @@ cat("C5.0 Accuracy: ",accuracy)
 
 
 
-tree = rpart(diagnosis_result ~ ., data = train_split, method = "class")
+tree = rpart(diagnosis_result ~ ., data = train_split, method = "class",control = rpart.control(minsplit = 3))
+rpart.plot(tree)
 ypride=predict(tree,test_split,type = "class")
 # View the model summary
 cm=table(ypride,test_split$diagnosis_result)
