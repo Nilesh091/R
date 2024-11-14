@@ -11,5 +11,11 @@ iris_test_lable=iris[-ind,5]
 install.packages("party")
 #target=
 library(party)
-tree=ctree(Species ~.,iris)
+tree=ctree(Species ~.,iris_train)
 plot(tree,main="Decision Tree for iris")
+
+pre=predict(tree,iris_test)
+cm=table(pre,iris_test_lable)
+accuracy=(sum(diag(cm))/sum(cm))*100
+accuracy
+

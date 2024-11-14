@@ -1,13 +1,15 @@
 library(rpart)
 library(rpart.plot)
+library(caTools)
 dataset = read.csv("~/LPU/R/R 5th sem/Prostate_cancer 1.csv")
 set.seed(123)
-s=sample(nrow(dataset),100)
-data_train=dataset[s,]
-data_test=dataset[-s,]
+library(caTools)
+split=sample.split(dataset,SplitRatio =0.70)
+train_split=subset(dataset,split==TRUE)
+test_split=subset(dataset,split==FALSE)
 # Train the decision tree model
 decision_tree_model = rpart(diagnosis_result ~ radius + texture + perimeter + area + smoothness + compactness + symmetry + fractal_dimension,
-                            data = data_train, method = "class")
+                            data = train_split, method = "class")
 # Basic plot with text
 plot(decision_tree_model)
 text(decision_tree_model)
@@ -19,10 +21,10 @@ rpart.plot(decision_tree_model)
 rpart.plot(decision_tree_model, type = 5, extra = 103)
 
 # Predict on the test data
-data_predict = predict(decision_tree_model, data_test, type = "class")
-
+data_predict = predict(decision_tree_model, test_split, type = "class")
+data_predict
 # Create a confusion matrix
-data_predict_table = table(data_test$diagnosis_result, data_predict)
+data_predict_table = table(test_split$diagnosis_result, data_predict)
 
 # Print the confusion matrix
 print(data_predict_table)
