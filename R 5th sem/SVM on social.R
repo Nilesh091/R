@@ -49,6 +49,8 @@ plot(set[, -3], main = 'SVM (Training set)', xlab = 'Age', ylab = 'Estimated Sal
 # Adding decision boundary contours to the plot
 contour(x1, x2, matrix(as.numeric(y_grid), length(x1), length(x2)), add = TRUE)
 points(grid_set,pch='.',col=ifelse(y_grid==1,'coral','aquamarine'))
+points(set,pch=21,bg=ifelse(set[,3]==1,'green4','red3'))
+
 
 
 set=test
@@ -71,3 +73,4 @@ plot(set[, -3], main = 'SVM (Training set)', xlab = 'Age', ylab = 'Estimated Sal
 contour(x1, x2, matrix(as.numeric(y_grid), length(x1), length(x2)), add = TRUE)
 
 points(grid_set,pch='.',col=ifelse(y_grid==1,'coral','aquamarine'))
+points(set,pch=21,bg=ifelse(set[,3]==1,'green4','red3'))

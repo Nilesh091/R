@@ -1,0 +1,23 @@
+install.packages("randomForest")
+library(randomForest)
+data("iris")
+str(iris)
+indexes=sample(150,110)
+indexes 
+iris_train=iris[indexes,]
+iris_test=iris[-indexes,]
+rf_model=randomForest(Species~.,
+                      data=iris_train,
+                      ntree=100)
+print(rf_model)
+prediction=predict(rf_model,iris_test)
+output=table(prediction,iris_test$Species)
+output
+accuracy=sum(diag(output))/sum(output)
+accuracy
+precision=mean(diag(output)/rowSums(output))
+precision
+recall=mean(diag(output)/colSums(output))
+recall
+f1=f1=(2*precision*recall)/(precision+recall)
+f1
