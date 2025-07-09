@@ -1,4 +1,4 @@
-##R
+## R
 R is a programming language and software environment primarily used for statistical computing and data analysis. It is highly popular among data scientists, statisticians, and researchers for its robust capabilities in handling large datasets, performing complex statistical calculations, and creating high-quality visualizations.
 
 **Key features of R include:**
